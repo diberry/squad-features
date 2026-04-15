@@ -1,4 +1,5 @@
 {
+  "version": 1,
   "schedules": [
     {
       "id": "ralph-heartbeat",
@@ -6,7 +7,7 @@
       "description": "Polls open issues every 5 minutes, triages new work, and assigns to agents.",
       "enabled": true,
       "trigger": { "type": "interval", "intervalSeconds": 300 },
-      "task": { "type": "script", "command": "squad ralph watch --duration 25s" },
+      "task": { "type": "script", "ref": "squad ralph watch --duration 25s" },
       "providers": ["local-polling", "github-actions"],
       "retry": { "maxRetries": 2, "backoffSeconds": 10 },
       "tags": ["monitoring", "core"]
@@ -16,8 +17,8 @@
       "name": "Nightly Context Cleanup",
       "description": "Runs 'squad nap --deep' at 2 AM to compress histories and archive stale decisions.",
       "enabled": true,
-      "trigger": { "type": "cron", "expression": "0 2 * * *" },
-      "task": { "type": "script", "command": "squad nap --deep" },
+      "trigger": { "type": "cron", "cron": "0 2 * * *" },
+      "task": { "type": "script", "ref": "squad nap --deep" },
       "providers": ["github-actions"],
       "retry": { "maxRetries": 1, "backoffSeconds": 30 },
       "tags": ["maintenance"]
@@ -28,7 +29,7 @@
       "description": "Runs once on squad init — pulls upstream changes and refreshes casting registry.",
       "enabled": true,
       "trigger": { "type": "startup" },
-      "task": { "type": "script", "command": "squad upstream sync && squad cast refresh" },
+      "task": { "type": "script", "ref": "squad upstream sync && squad cast refresh" },
       "providers": ["local-polling"],
       "retry": { "maxRetries": 1, "backoffSeconds": 5 },
       "tags": ["sync"]
@@ -38,7 +39,7 @@
       "name": "Weekly Status Report",
       "description": "Generates a weekly summary of completed work, open blockers, and metrics.",
       "enabled": true,
-      "trigger": { "type": "cron", "expression": "0 9 * * MON" },
+      "trigger": { "type": "cron", "cron": "0 9 * * MON" },
       "task": { "type": "workflow", "ref": ".github/workflows/weekly-report.yml" },
       "providers": ["github-actions"],
       "tags": ["reporting"]
