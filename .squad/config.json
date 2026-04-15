@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "defaultModel": "claude-sonnet-4.6",
+  "economyMode": false,
+  "agentModelOverrides": {
+    "scribe": "claude-haiku-4.5",
+    "ralph": "gpt-4.1"
+  }
+}

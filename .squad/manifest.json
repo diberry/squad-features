@@ -1,0 +1,12 @@
+{
+  "name": "squad-features-demo",
+  "version": "1.0.0",
+  "description": "Demo squad showcasing Squad's top features — companion to the blog post",
+  "capabilities": ["web-app", "api", "testing", "docs"],
+  "contact": {
+    "repo": "dfberry/squad-features",
+    "labels": ["squad:demo"]
+  },
+  "accepts": ["issues", "prs"],
+  "skills": ["web-developer", "api-designer", "test-engineer", "docs-writer"]
+}

@@ -1,0 +1,16 @@
+{
+  "state": "closed",
+  "preferredModel": "claude-sonnet-4.6",
+  "fallbackChain": ["gpt-5.4-mini", "gpt-5-mini", "gpt-4.1"],
+  "currentFallbackIndex": 0,
+  "cooldownMinutes": 10,
+  "openedAt": null,
+  "halfOpenSuccesses": 0,
+  "consecutiveFailures": 0,
+  "metrics": {
+    "totalFallbacks": 3,
+    "totalRecoveries": 3,
+    "lastFallbackAt": "2026-04-18T14:32:00Z",
+    "lastRecoveryAt": "2026-04-18T14:44:00Z"
+  }
+}

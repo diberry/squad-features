@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Squad runtime state (not committed)
+.squad/.schedule-state.json
+.squad/sessions/
+.squad/log/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local

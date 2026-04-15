@@ -1,0 +1,6 @@
+{
+  "machine": "DEV-LAPTOP",
+  "capabilities": ["browser", "personal-gh", "docker", "azure-cli", "onedrive"],
+  "missing": ["gpu", "azure-speech", "emu-gh", "teams-mcp"],
+  "lastUpdated": "2026-04-20T10:00:00Z"
+}
